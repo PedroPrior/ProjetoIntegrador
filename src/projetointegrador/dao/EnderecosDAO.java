@@ -23,7 +23,7 @@ public class EnderecosDAO {
     public void cadastrarEndereco(Enderecos obj){
         try {
             //2º passo: criar uma string de comando SQL
-            String sql = "insert into tb_enderecos(cep, bairro, rua, complemento, cidade, uf, numero)"
+            String sql = "insert into enderecos(cep, bairro, rua, complemento, cidade, uf, numero)"
                     + "values (?,?,?,?,?,?,?)";
             
             //3º passo: preparar o comando SQL com a classe PreparedStament

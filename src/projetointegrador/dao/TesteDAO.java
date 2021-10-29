@@ -18,6 +18,7 @@ public class TesteDAO {
         EnderecosDAO daoObj = new EnderecosDAO();
         daoObj.cadastrarEndereco(enderecoTeste);
         
+        
     }
    
     

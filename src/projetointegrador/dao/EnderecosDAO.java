@@ -5,10 +5,12 @@
 package projetointegrador.dao;
 
 import java.awt.HeadlessException;
+import java.awt.List;
 import java.sql.*;
 import javax.swing.JOptionPane;
 import projetointegrador.jdbc.ConnectionFactory;
 import projetointegrador.model.Enderecos;
+import java.util.ArrayList;
 
 public class EnderecosDAO {
     //Atributos
@@ -48,5 +50,48 @@ public class EnderecosDAO {
             JOptionPane.showMessageDialog(null, e);
         }
     }
+    
+    public java.util.List<Enderecos> listarEnderecos() {
+        try {
+            java.util.List<Enderecos> listaEnderecos = new ArrayList<>();
+            
+
+            String sql = "select * from enderecos";
+            
+            
+            PreparedStatement comando = conexao.prepareStatement(sql);
+           
+            ResultSet rs = comando.executeQuery();
+            
+            while(rs.next()){ //Enquanto(while) conseguir percorrer o próximo (next) item do ResultSet
+                //É preciso criar um objeto (obj) do modelo de endereços para 
+                //cada item que retorn do ResultSet;
+                Enderecos obj = new Enderecos();
+                
+                //Nesse objeto preciso salvar cada atributo dos campos do ResultSet
+                //em um atributo do objeto do tipo enderecos
+                obj.setId(rs.getInt("id"));
+                obj.setCep(rs.getString("CEP"));
+                obj.setBairro(rs.getString("Bairro"));
+                obj.setRua(rs.getString("Rua"));
+                obj.setComplemento(rs.getString("Complemento"));
+                obj.setCidade(rs.getString("Cidade"));
+                obj.setUF(rs.getString("UF"));
+                obj.setNumero(rs.getInt("Numero"));
+                
+                System.out.println("OBJETO: " + obj);
+                
+                //Após todos os atributos serem inserido dentro do objeto
+                //preciso adicionar esse objeto na minha lista de enderecos
+                listaEnderecos.add(obj);       
+            }
+           
+            return listaEnderecos;
+        } catch (SQLException e) {
+            JOptionPane.showMessageDialog(null, e);
+            return null;
+        }
+    }
+  
     
 }

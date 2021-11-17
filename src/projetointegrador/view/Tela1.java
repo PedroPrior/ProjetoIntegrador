@@ -6,6 +6,7 @@
 package projetointegrador.view;
 
 import javax.swing.JOptionPane;
+import projetointegrador.dao.ClientesDAO;
 import projetointegrador.dao.EnderecosDAO;
 import projetointegrador.model.Clientes;
 import projetointegrador.model.Enderecos;
@@ -70,7 +71,7 @@ public class Tela1 extends javax.swing.JFrame {
         jComboBoxEnderecos = new javax.swing.JComboBox<>();
         jButtonSalvarEndereco = new javax.swing.JButton();
         jButtonListarEnderecos = new javax.swing.JButton();
-        jButtonSalvarCliente1 = new javax.swing.JButton();
+        jButtonSalvarCliente = new javax.swing.JButton();
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
 
@@ -296,11 +297,11 @@ public class Tela1 extends javax.swing.JFrame {
             }
         });
 
-        jButtonSalvarCliente1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jButtonSalvarCliente1.setText("Salvar Cliente");
-        jButtonSalvarCliente1.addActionListener(new java.awt.event.ActionListener() {
+        jButtonSalvarCliente.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jButtonSalvarCliente.setText("Salvar Cliente");
+        jButtonSalvarCliente.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonSalvarCliente1ActionPerformed(evt);
+                jButtonSalvarClienteActionPerformed(evt);
             }
         });
 
@@ -363,14 +364,12 @@ public class Tela1 extends javax.swing.JFrame {
                             .addGroup(jPanelDadosPessoaisLayout.createSequentialGroup()
                                 .addComponent(jLabelRua)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jTextFieldRua, javax.swing.GroupLayout.PREFERRED_SIZE, 390, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED))
+                                .addComponent(jTextFieldRua, javax.swing.GroupLayout.PREFERRED_SIZE, 390, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(jPanelDadosPessoaisLayout.createSequentialGroup()
                                 .addGap(13, 13, 13)
                                 .addComponent(jLabelEndereco)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jComboBoxEnderecos, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(29, 29, 29)))
+                                .addComponent(jComboBoxEnderecos, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGap(17, 17, 17)
                         .addComponent(jLabelNo)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -379,7 +378,7 @@ public class Tela1 extends javax.swing.JFrame {
                 .addGroup(jPanelDadosPessoaisLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jButtonSalvarEndereco)
                     .addComponent(jButtonListarEnderecos, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButtonSalvarCliente1, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jButtonSalvarCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(81, 81, 81))
         );
         jPanelDadosPessoaisLayout.setVerticalGroup(
@@ -432,7 +431,7 @@ public class Tela1 extends javax.swing.JFrame {
                                     .addComponent(jFormattedTextFieldCEP, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                     .addGroup(jPanelDadosPessoaisLayout.createSequentialGroup()
                         .addGap(53, 53, 53)
-                        .addComponent(jButtonSalvarCliente1, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jButtonSalvarCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jButtonSalvarEndereco, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
@@ -453,7 +452,7 @@ public class Tela1 extends javax.swing.JFrame {
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(476, Short.MAX_VALUE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel1)
                 .addGap(414, 414, 414))
         );
@@ -472,7 +471,7 @@ public class Tela1 extends javax.swing.JFrame {
             .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jTabbedPaneClientes, javax.swing.GroupLayout.DEFAULT_SIZE, 1203, Short.MAX_VALUE)
+                .addComponent(jTabbedPaneClientes)
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -487,9 +486,20 @@ public class Tela1 extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButtonSalvarCliente1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonSalvarCliente1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButtonSalvarCliente1ActionPerformed
+    private void jButtonSalvarClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonSalvarClienteActionPerformed
+       try {
+            Clientes clientes = new Clientes();
+            clientes.setNome(jTextFieldNome.getText());
+            clientes.setTelefone(jFormattedTextFieldTel.getText());
+            clientes.setEmail(jTextFieldEmail.getText());
+            clientes.setCpf(jFormattedTextFieldCPF.getText());
+            
+
+            ClientesDAO ClienteDAO = new ClientesDAO();
+            ClienteDAO.cadastrarClientes(clientes);
+        } catch (Exception e) {
+        }
+    }//GEN-LAST:event_jButtonSalvarClienteActionPerformed
 
     private void jButtonListarEnderecosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonListarEnderecosActionPerformed
 
@@ -600,7 +610,7 @@ public class Tela1 extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButtonListarEnderecos;
     private javax.swing.JButton jButtonPesquisarCon;
-    private javax.swing.JButton jButtonSalvarCliente1;
+    private javax.swing.JButton jButtonSalvarCliente;
     private javax.swing.JButton jButtonSalvarEndereco;
     private javax.swing.JComboBox<String> jComboBoxEnderecos;
     private javax.swing.JComboBox<String> jComboBoxUF;

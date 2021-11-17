@@ -13,7 +13,6 @@ public class Clientes {
     private String email;
     private String cpf;
     private String telefone;
-    private Enderecos endereco;
     
     //GETTER E SETTERS
     public int getId() {
@@ -56,12 +55,4 @@ public class Clientes {
         this.telefone = telefone;
     }
 
-    public Enderecos getEndereco() {
-        return endereco;
-    }
-
-    public void setEndereco(Enderecos endereco) {
-        this.endereco = endereco;
-    }
-    
 }

@@ -25,8 +25,8 @@ public class EnderecosDAO {
     public void cadastrarEndereco(Enderecos obj){
         try {
             //2º passo: criar uma string de comando SQL
-            String sql = "insert into enderecos(cep, bairro, rua, complemento, cidade, uf, numero)"
-                    + "values (?,?,?,?,?,?,?)";
+            String sql = "insert into enderecos(cep, bairro, rua, complemento, cidade, uf, numero, clientes_id_clientes)"
+                    + "values (?,?,?,?,?,?,?,?)";
             
             //3º passo: preparar o comando SQL com a classe PreparedStament
             PreparedStatement comando = conexao.prepareStatement(sql);
@@ -37,6 +37,7 @@ public class EnderecosDAO {
             comando.setString(5, obj.getCidade());
             comando.setString(6, obj.getUF ());
             comando.setInt(7, obj.getNumero());
+            comando.setInt(8, obj.getCliente().getId());
             
             //4º passo: executar o comando sql e fechar a conexão
             comando.execute();

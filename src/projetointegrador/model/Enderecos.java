@@ -18,7 +18,8 @@ public class Enderecos {
     private String cidade;
     private String uf;
     private int numero;
-    
+    //  Chave Estrangeira (FK)
+    private Clientes cliente;
     //GETTERS E SETTERS
     public int getId() {
         return id;
@@ -84,6 +85,16 @@ public class Enderecos {
         this.uf = uf;
     }
 
-    
+    public Clientes getCliente() {
+        return cliente;
+    }
+
+    public void setCliente(Clientes cliente) {
+        this.cliente = cliente;
+    }
+
+    public void setNome(String string) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
     
 }

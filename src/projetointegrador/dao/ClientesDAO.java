@@ -119,25 +119,53 @@ public class ClientesDAO {
     
     public void deletarCliente(Clientes obj) {
         try {
-            JOptionPane.showConfirmDialog(null, "Deseja realmente excluir o cliente?", "", 0);
-            //2º passo: criar uma string de comando SQL
-            String sql = "delete from clientes where id=?";
-                 
-            
-            //3º passo: preparar o comando SQL com a classe PreparedStament
-            PreparedStatement comando = conexao.prepareStatement(sql);
-            comando.setInt(1, obj.getId());
-            
-            comando.execute();
-            comando.close();
-          
-            //Se chegar aqui a exclusão foi efetuado com sucesso
-            JOptionPane.showMessageDialog(null, "Exclusão de cliente efetuado com sucesso");
-            
-            
+            int opcao = JOptionPane.showConfirmDialog(null, "Deseja realmente excluir o cliente?", "CONFIRMAÇÃO DE EXCLUSÃO", JOptionPane.OK_CANCEL_OPTION);
+            if (opcao == 0) {
+                //2º passo: criar uma string de comando SQL
+                String sql = "delete from clientes where id=?";
+
+                //3º passo: preparar o comando SQL para o driver
+                PreparedStatement comando = conexao.prepareStatement(sql);
+                comando.setInt(1, obj.getId());
+
+                //4º passo: executar o comando sql e fechar a conexão
+                comando.execute();
+                comando.close();
+
+                //Se chegar aqui mostra a janela de exclusao com sucesso;
+                JOptionPane.showMessageDialog(null, "Cliente excluído com sucesso!");
+            }
+        } catch (SQLException e) {
+            JOptionPane.showMessageDialog(null, e);
+        }
+    }
+    
+    public void atualizarCliente(Clientes obj) {
+        try {
+            int opcao = JOptionPane.showConfirmDialog(null, "Deseja realmente atualizar o cliente?", "CONFIRMAÇÃO DE ATUALIZAÇÃO", JOptionPane.OK_CANCEL_OPTION);
+            if (opcao == 0) {
+                //2º passo: criar uma string de comando SQL
+                String sql = "update clientes set nome=?, email=?, cpf=?, telefone=? where id=?";
+
+                //3º passo: preparar o comando SQL para o driver
+                PreparedStatement comando = conexao.prepareStatement(sql);
+                comando.setString(1, obj.getNome());
+                comando.setString(2, obj.getEmail());
+                comando.setString(3, obj.getCpf());
+                comando.setString(4, obj.getTelefone());
+                comando.setInt(5, obj.getId());
+
+                //4º passo: executar o comando sql e fechar a conexão
+                comando.execute();
+                comando.close();
+
+                //Se chegar aqui mostra a janela de cadastro com sucesso;
+                JOptionPane.showMessageDialog(null, "Cadastro de cliente atualizado com sucesso!");
+            }
         } catch (SQLException e) {
         }
     }
+    
  }
 
 

@@ -37,6 +37,12 @@ public class Tela1 extends javax.swing.JFrame {
     private void initComponents() {
 
         jTabbedPaneClientes = new javax.swing.JTabbedPane();
+        jPanelConsultaClientes = new javax.swing.JPanel();
+        jLabelNomeCon = new javax.swing.JLabel();
+        jTextFieldPesquisa = new javax.swing.JTextField();
+        jButtonPesquisar = new javax.swing.JButton();
+        jScrollPaneCon = new javax.swing.JScrollPane();
+        jTableClientes = new javax.swing.JTable();
         jPanelDadosPessoais = new javax.swing.JPanel();
         jLabelId = new javax.swing.JLabel();
         jTextFieldId = new javax.swing.JTextField();
@@ -70,20 +76,87 @@ public class Tela1 extends javax.swing.JFrame {
         jButtonAtualizar = new javax.swing.JButton();
         jButtonSalvarCliente = new javax.swing.JButton();
         jSeparator1 = new javax.swing.JSeparator();
-        jPanelConsultaClientes = new javax.swing.JPanel();
-        jLabelNomeCon = new javax.swing.JLabel();
-        jTextFieldPesquisa = new javax.swing.JTextField();
-        jButtonPesquisar = new javax.swing.JButton();
-        jScrollPaneCon = new javax.swing.JScrollPane();
-        jTableClientes = new javax.swing.JTable();
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setBackground(new java.awt.Color(255, 255, 255));
 
+        jTabbedPaneClientes.setBackground(new java.awt.Color(255, 255, 255));
         jTabbedPaneClientes.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
+        jPanelConsultaClientes.setBackground(new java.awt.Color(255, 255, 255));
+
+        jLabelNomeCon.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jLabelNomeCon.setText("Nome:");
+
+        jTextFieldPesquisa.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jTextFieldPesquisa.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextFieldPesquisaActionPerformed(evt);
+            }
+        });
+
+        jButtonPesquisar.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jButtonPesquisar.setText("Pesquisar");
+        jButtonPesquisar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonPesquisarActionPerformed(evt);
+            }
+        });
+
+        jTableClientes.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Identificador", "Nome", "CPF", "Email", "Telefone"
+            }
+        ));
+        jTableClientes.setEnabled(false);
+        jTableClientes.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jTableClientesMouseClicked(evt);
+            }
+        });
+        jScrollPaneCon.setViewportView(jTableClientes);
+
+        javax.swing.GroupLayout jPanelConsultaClientesLayout = new javax.swing.GroupLayout(jPanelConsultaClientes);
+        jPanelConsultaClientes.setLayout(jPanelConsultaClientesLayout);
+        jPanelConsultaClientesLayout.setHorizontalGroup(
+            jPanelConsultaClientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanelConsultaClientesLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanelConsultaClientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanelConsultaClientesLayout.createSequentialGroup()
+                        .addComponent(jLabelNomeCon)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jTextFieldPesquisa, javax.swing.GroupLayout.PREFERRED_SIZE, 404, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jButtonPesquisar)
+                        .addContainerGap(666, Short.MAX_VALUE))
+                    .addGroup(jPanelConsultaClientesLayout.createSequentialGroup()
+                        .addComponent(jScrollPaneCon)
+                        .addGap(154, 154, 154))))
+        );
+        jPanelConsultaClientesLayout.setVerticalGroup(
+            jPanelConsultaClientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanelConsultaClientesLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanelConsultaClientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jButtonPesquisar)
+                    .addGroup(jPanelConsultaClientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jLabelNomeCon)
+                        .addComponent(jTextFieldPesquisa, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(18, 18, 18)
+                .addComponent(jScrollPaneCon, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(359, Short.MAX_VALUE))
+        );
+
+        jTabbedPaneClientes.addTab("CONSULTA", jPanelConsultaClientes);
+
+        jPanelDadosPessoais.setBackground(new java.awt.Color(255, 255, 255));
         jPanelDadosPessoais.setPreferredSize(new java.awt.Dimension(1229, 800));
 
         jLabelId.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
@@ -400,76 +473,6 @@ public class Tela1 extends javax.swing.JFrame {
 
         jTabbedPaneClientes.addTab("CLIENTES", jPanelDadosPessoais);
 
-        jPanelConsultaClientes.setBackground(new java.awt.Color(255, 255, 255));
-
-        jLabelNomeCon.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jLabelNomeCon.setText("Nome:");
-
-        jTextFieldPesquisa.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jTextFieldPesquisa.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextFieldPesquisaActionPerformed(evt);
-            }
-        });
-
-        jButtonPesquisar.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jButtonPesquisar.setText("Pesquisar");
-        jButtonPesquisar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonPesquisarActionPerformed(evt);
-            }
-        });
-
-        jTableClientes.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-
-            },
-            new String [] {
-                "Identificador", "Nome", "CPF", "Email", "Telefone"
-            }
-        ));
-        jTableClientes.setEnabled(false);
-        jTableClientes.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jTableClientesMouseClicked(evt);
-            }
-        });
-        jScrollPaneCon.setViewportView(jTableClientes);
-
-        javax.swing.GroupLayout jPanelConsultaClientesLayout = new javax.swing.GroupLayout(jPanelConsultaClientes);
-        jPanelConsultaClientes.setLayout(jPanelConsultaClientesLayout);
-        jPanelConsultaClientesLayout.setHorizontalGroup(
-            jPanelConsultaClientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanelConsultaClientesLayout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanelConsultaClientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanelConsultaClientesLayout.createSequentialGroup()
-                        .addComponent(jLabelNomeCon)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jTextFieldPesquisa, javax.swing.GroupLayout.PREFERRED_SIZE, 404, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jButtonPesquisar)
-                        .addContainerGap(666, Short.MAX_VALUE))
-                    .addGroup(jPanelConsultaClientesLayout.createSequentialGroup()
-                        .addComponent(jScrollPaneCon)
-                        .addGap(154, 154, 154))))
-        );
-        jPanelConsultaClientesLayout.setVerticalGroup(
-            jPanelConsultaClientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanelConsultaClientesLayout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanelConsultaClientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jButtonPesquisar)
-                    .addGroup(jPanelConsultaClientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jLabelNomeCon)
-                        .addComponent(jTextFieldPesquisa, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(18, 18, 18)
-                .addComponent(jScrollPaneCon, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(359, Short.MAX_VALUE))
-        );
-
-        jTabbedPaneClientes.addTab("CONSULTA", jPanelConsultaClientes);
-
         jPanel1.setBackground(new java.awt.Color(51, 153, 255));
 
         jLabel1.setFont(new java.awt.Font("Arial", 1, 36)); // NOI18N
@@ -512,11 +515,10 @@ public class Tela1 extends javax.swing.JFrame {
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(39, 39, 39)
-                .addComponent(jTabbedPaneClientes, javax.swing.GroupLayout.PREFERRED_SIZE, 506, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(171, Short.MAX_VALUE))
+                .addComponent(jTabbedPaneClientes, javax.swing.GroupLayout.PREFERRED_SIZE, 506, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
         jTabbedPaneClientes.getAccessibleContext().setAccessibleName("CONSULTA");

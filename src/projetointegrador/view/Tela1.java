@@ -89,6 +89,7 @@ public class Tela1 extends javax.swing.JFrame {
         jLabelId.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLabelId.setText("Identificador:");
 
+        jTextFieldId.setEditable(false);
         jTextFieldId.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
 
         jLabelNome.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
@@ -464,7 +465,7 @@ public class Tela1 extends javax.swing.JFrame {
                         .addComponent(jTextFieldPesquisa, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPaneCon, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(311, Short.MAX_VALUE))
+                .addContainerGap(359, Short.MAX_VALUE))
         );
 
         jTabbedPaneClientes.addTab("CONSULTA", jPanelConsultaClientes);
@@ -655,7 +656,7 @@ public class Tela1 extends javax.swing.JFrame {
 
         //Mudar a tela para a aba principal (A aba com índice 0)
         //
-        jTabbedPaneClientes.setSelectedIndex(2);
+        jTabbedPaneClientes.setSelectedIndex(0);
     }//GEN-LAST:event_jTableClientesMouseClicked
 
     private void jButtonPesquisarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonPesquisarActionPerformed

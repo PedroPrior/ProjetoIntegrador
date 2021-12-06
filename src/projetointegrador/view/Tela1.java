@@ -36,13 +36,9 @@ public class Tela1 extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jPanel1 = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
         jTabbedPaneClientes = new javax.swing.JTabbedPane();
-        jPanelConsultaClientes = new javax.swing.JPanel();
-        jLabelNomeCon = new javax.swing.JLabel();
-        jTextFieldPesquisa = new javax.swing.JTextField();
-        jButtonPesquisar = new javax.swing.JButton();
-        jScrollPaneCon = new javax.swing.JScrollPane();
-        jTableClientes = new javax.swing.JTable();
         jPanelDadosPessoais = new javax.swing.JPanel();
         jLabelId = new javax.swing.JLabel();
         jTextFieldId = new javax.swing.JTextField();
@@ -76,85 +72,41 @@ public class Tela1 extends javax.swing.JFrame {
         jButtonAtualizar = new javax.swing.JButton();
         jButtonSalvarCliente = new javax.swing.JButton();
         jSeparator1 = new javax.swing.JSeparator();
-        jPanel1 = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
+        jPanelConsultaClientes = new javax.swing.JPanel();
+        jLabelNomeCon = new javax.swing.JLabel();
+        jTextFieldPesquisa = new javax.swing.JTextField();
+        jButtonPesquisar = new javax.swing.JButton();
+        jScrollPaneCon = new javax.swing.JScrollPane();
+        jTableClientes = new javax.swing.JTable();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(255, 255, 255));
 
+        jPanel1.setBackground(new java.awt.Color(51, 153, 255));
+
+        jLabel1.setFont(new java.awt.Font("Arial", 1, 36)); // NOI18N
+        jLabel1.setForeground(java.awt.Color.white);
+        jLabel1.setText("Cadastro de Clientes");
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel1)
+                .addGap(414, 414, 414))
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(37, 37, 37)
+                .addComponent(jLabel1)
+                .addContainerGap(22, Short.MAX_VALUE))
+        );
+
         jTabbedPaneClientes.setBackground(new java.awt.Color(255, 255, 255));
         jTabbedPaneClientes.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-
-        jPanelConsultaClientes.setBackground(new java.awt.Color(255, 255, 255));
-
-        jLabelNomeCon.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jLabelNomeCon.setText("Nome:");
-
-        jTextFieldPesquisa.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jTextFieldPesquisa.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextFieldPesquisaActionPerformed(evt);
-            }
-        });
-
-        jButtonPesquisar.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jButtonPesquisar.setText("Pesquisar");
-        jButtonPesquisar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonPesquisarActionPerformed(evt);
-            }
-        });
-
-        jTableClientes.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-
-            },
-            new String [] {
-                "Identificador", "Nome", "CPF", "Email", "Telefone"
-            }
-        ));
-        jTableClientes.setEnabled(false);
-        jTableClientes.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jTableClientesMouseClicked(evt);
-            }
-        });
-        jScrollPaneCon.setViewportView(jTableClientes);
-
-        javax.swing.GroupLayout jPanelConsultaClientesLayout = new javax.swing.GroupLayout(jPanelConsultaClientes);
-        jPanelConsultaClientes.setLayout(jPanelConsultaClientesLayout);
-        jPanelConsultaClientesLayout.setHorizontalGroup(
-            jPanelConsultaClientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanelConsultaClientesLayout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanelConsultaClientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanelConsultaClientesLayout.createSequentialGroup()
-                        .addComponent(jLabelNomeCon)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jTextFieldPesquisa, javax.swing.GroupLayout.PREFERRED_SIZE, 404, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jButtonPesquisar)
-                        .addContainerGap(666, Short.MAX_VALUE))
-                    .addGroup(jPanelConsultaClientesLayout.createSequentialGroup()
-                        .addComponent(jScrollPaneCon)
-                        .addGap(154, 154, 154))))
-        );
-        jPanelConsultaClientesLayout.setVerticalGroup(
-            jPanelConsultaClientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanelConsultaClientesLayout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanelConsultaClientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jButtonPesquisar)
-                    .addGroup(jPanelConsultaClientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jLabelNomeCon)
-                        .addComponent(jTextFieldPesquisa, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(18, 18, 18)
-                .addComponent(jScrollPaneCon, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(359, Short.MAX_VALUE))
-        );
-
-        jTabbedPaneClientes.addTab("CONSULTA", jPanelConsultaClientes);
 
         jPanelDadosPessoais.setBackground(new java.awt.Color(255, 255, 255));
         jPanelDadosPessoais.setPreferredSize(new java.awt.Dimension(1229, 800));
@@ -473,34 +425,73 @@ public class Tela1 extends javax.swing.JFrame {
 
         jTabbedPaneClientes.addTab("CLIENTES", jPanelDadosPessoais);
 
-        jPanel1.setBackground(new java.awt.Color(51, 153, 255));
+        jPanelConsultaClientes.setBackground(new java.awt.Color(255, 255, 255));
 
-        jLabel1.setFont(new java.awt.Font("Arial", 1, 36)); // NOI18N
-        jLabel1.setForeground(java.awt.Color.white);
-        jLabel1.setText("Cadastro de Clientes");
+        jLabelNomeCon.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jLabelNomeCon.setText("Nome:");
 
-        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Logos/logo.png"))); // NOI18N
+        jTextFieldPesquisa.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jTextFieldPesquisa.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextFieldPesquisaActionPerformed(evt);
+            }
+        });
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addGap(27, 27, 27)
-                .addComponent(jLabel3)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel1)
-                .addGap(414, 414, 414))
+        jButtonPesquisar.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jButtonPesquisar.setText("Pesquisar");
+        jButtonPesquisar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonPesquisarActionPerformed(evt);
+            }
+        });
+
+        jTableClientes.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Identificador", "Nome", "CPF", "Email", "Telefone"
+            }
+        ));
+        jTableClientes.setEnabled(false);
+        jTableClientes.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jTableClientesMouseClicked(evt);
+            }
+        });
+        jScrollPaneCon.setViewportView(jTableClientes);
+
+        javax.swing.GroupLayout jPanelConsultaClientesLayout = new javax.swing.GroupLayout(jPanelConsultaClientes);
+        jPanelConsultaClientes.setLayout(jPanelConsultaClientesLayout);
+        jPanelConsultaClientesLayout.setHorizontalGroup(
+            jPanelConsultaClientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanelConsultaClientesLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanelConsultaClientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPaneCon, javax.swing.GroupLayout.PREFERRED_SIZE, 1200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jPanelConsultaClientesLayout.createSequentialGroup()
+                        .addComponent(jLabelNomeCon)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jTextFieldPesquisa, javax.swing.GroupLayout.PREFERRED_SIZE, 404, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jButtonPesquisar)))
+                .addContainerGap(19, Short.MAX_VALUE))
         );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(19, 19, 19)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jLabel3)
-                    .addComponent(jLabel1))
-                .addContainerGap(22, Short.MAX_VALUE))
+        jPanelConsultaClientesLayout.setVerticalGroup(
+            jPanelConsultaClientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanelConsultaClientesLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanelConsultaClientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jButtonPesquisar)
+                    .addGroup(jPanelConsultaClientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jLabelNomeCon)
+                        .addComponent(jTextFieldPesquisa, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(18, 18, 18)
+                .addComponent(jScrollPaneCon, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(308, Short.MAX_VALUE))
         );
+
+        jTabbedPaneClientes.addTab("CONSULTA", jPanelConsultaClientes);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -517,8 +508,9 @@ public class Tela1 extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(39, 39, 39)
-                .addComponent(jTabbedPaneClientes, javax.swing.GroupLayout.PREFERRED_SIZE, 506, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(28, 28, 28)
+                .addComponent(jTabbedPaneClientes, javax.swing.GroupLayout.PREFERRED_SIZE, 506, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
 
         jTabbedPaneClientes.getAccessibleContext().setAccessibleName("CONSULTA");
@@ -536,7 +528,7 @@ public class Tela1 extends javax.swing.JFrame {
             clientes.setCpf(jFormattedTextFieldCPF.getText());
 
             ClientesDAO ClienteDAO = new ClientesDAO();
-            ClienteDAO.cadastrarClientes(clientes);
+            ClienteDAO.cadastrarCliente(clientes);
 
             if(!jTextFieldRua.getText().isBlank()){
                 Enderecos endereco = new Enderecos();
@@ -592,10 +584,10 @@ public class Tela1 extends javax.swing.JFrame {
 
             Enderecos endereco = new Enderecos();
             endereco.setCep(jFormattedTextFieldCEP.getText());
-            endereco.setRua(jTextFieldRua.getText());
-            endereco.setNumero(Integer.parseInt(jFormattedTextFieldNo.getText()));
-            endereco.setComplemento(jTextFieldComp.getText());
             endereco.setBairro(jTextFieldBairro.getText());
+            endereco.setRua(jTextFieldRua.getText());
+            endereco.setComplemento(jTextFieldComp.getText());
+            endereco.setNumero(Integer.parseInt(jFormattedTextFieldNo.getText()));
             endereco.setCidade(jTextFieldCidade.getText());
             endereco.setUF(jComboBoxUF.getSelectedItem().toString());
 
@@ -656,32 +648,26 @@ public class Tela1 extends javax.swing.JFrame {
         int a = jTableClientes.rowAtPoint(evt.getPoint());
         System.out.println(a);
 
-        //Mudar a tela para a aba principal (A aba com índice 0)
-        //
+       
+      
         jTabbedPaneClientes.setSelectedIndex(0);
     }//GEN-LAST:event_jTableClientesMouseClicked
 
     private void jButtonPesquisarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonPesquisarActionPerformed
         if(jTextFieldPesquisa.getText().isBlank()){
-            //1º passo: criar um objeto DAO para podermos utilizar seus métodos
+           
             ClientesDAO dao = new ClientesDAO();
 
-            //2º passo: criar uma lista de endereços através do método listar
-            //enderecos do DAO
+            
             List<Clientes> lista = dao.listarClientes();
 
-            //3º passo: criar uma tabela do modelo padrão. Para isso pegamos o modelo
-            //do componente jTable da tela através do método getModel() e convertemos
-            //ele através de um casting para o modelo de tabela padrão.
+          
             DefaultTableModel tabela = (DefaultTableModel)jTableClientes.getModel();
 
-            //4º passo: setamos o número de colunas de nossa tabela em zero para limpar
-            // e garantir que não existem nenhum dado pré existente.
-            tabela.setNumRows(0);
+           
+            tabela.setNumRows(1);
 
-            //5º passo: precisamos colocar os itens da lista na tabela. Para cada objeto
-            //do tipo Endereco na lista, nós adicionamos um novo objeto com os atributos
-            //do objeto endereco nos seus campos separados por vírgula.
+          
             for(Clientes cliente: lista){ //este é um exemplo de uso do for-each
                 tabela.addRow(new Object[]{ //este Object é um vetor/array
                     cliente.getId(),
@@ -747,7 +733,6 @@ public class Tela1 extends javax.swing.JFrame {
     private javax.swing.JFormattedTextField jFormattedTextFieldNo;
     private javax.swing.JFormattedTextField jFormattedTextFieldTel;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabelBairro;
     private javax.swing.JLabel jLabelCEP;

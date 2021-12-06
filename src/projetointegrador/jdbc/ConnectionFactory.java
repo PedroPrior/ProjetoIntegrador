@@ -14,12 +14,11 @@ public class ConnectionFactory {
    static public Connection getConnection(){
         try {
             //URL para conexão com o BD
-            final String url = "jdbc:mysql://localhost:3306/LEVELUPDB"
-                    //Comandos extras para estabelecer uma conexão segura com o BD
-                    //Ficou curioso? Estude sobre SSL
+            final String url = "jdbc:mysql://localhost:3306/projetointegrador"
+                   
                     + "?verifyServerCertificate=false&useSSL=true";
-            final String user = "teste";
-            final String password = "987654";
+            final String user = "root";
+            final String password = "";
             
             return DriverManager.getConnection(url, user, password);
         } catch (SQLException e) {

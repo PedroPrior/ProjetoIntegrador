@@ -9,17 +9,17 @@ package projetointegrador.model;
  *
  */
 public class Enderecos {
-    //ATRIBUTOS
-    private int id;
+     private int id;
     private String cep;
-    private String bairro;
     private String rua;
+    private int numero;
     private String complemento;
+    private String bairro;
     private String cidade;
     private String uf;
-    private int numero;
-    //  Chave Estrangeira (FK)
+    //Quando se tem uma chave estrangeira (Foreign Key, FK)
     private Clientes cliente;
+    
     //GETTERS E SETTERS
     public int getId() {
         return id;
@@ -91,10 +91,6 @@ public class Enderecos {
 
     public void setCliente(Clientes cliente) {
         this.cliente = cliente;
-    }
-
-    public void setNome(String string) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     
 }
